@@ -44,19 +44,15 @@ const routes = [
         name: "mealDetails",
         component: MealDetails,
       },
+      {
+        path: "*",
+        component: NotFoundMeals,
+      },
     ],
   },
   {
     path: "/guest",
     component: GuestLayout,
-  },
-  {
-    path: "/:pathMatch(.*)*",
-    redirect: "/",
-  },
-  {
-    path: "/:catchAll(.*)",
-    component: NotFoundMeals,
   },
 ];
 

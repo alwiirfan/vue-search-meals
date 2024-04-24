@@ -15,10 +15,12 @@
   <div class="grid grid-cols-1 md:grid-cols-4 gap-9 md:gap-5 p-8" v-if="meals">
     <MealItems v-for="meal of meals" :key="meal.idMeal" :meal="meal" />
   </div>
-  <NotFoundMeals
-    :message="`No meal found`"
-    :command="`Please search again!!`"
-  />
+  <div class="flex flex-col justify-center items-center w-full" v-else>
+    <NotFoundMeals
+      :message="`No meal found`"
+      :command="`Please search again!!`"
+    />
+  </div>
 </template>
 
 <script setup>
