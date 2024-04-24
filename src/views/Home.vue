@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex justify-center items-center p-2 md:p-4 text-2xl md:text-4xl font-bold"
+    class="flex justify-center items-center p-2 md:p-4 text-2xl md:text-4xl font-bold mt-16"
   >
     <h3>Other Meals</h3>
   </div>
