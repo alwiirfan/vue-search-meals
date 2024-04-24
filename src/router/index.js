@@ -7,6 +7,7 @@ import DefaultLayout from "../components/DefaultLayout.vue";
 import GuestLayout from "../components/GuestLayout.vue";
 import MealDetails from "../views/MealDetails.vue";
 import Ingredients from "../views/Ingredients.vue";
+import NotFoundMeals from "../components/errors/NotFoundMeals.vue";
 
 const routes = [
   {
@@ -48,6 +49,14 @@ const routes = [
   {
     path: "/guest",
     component: GuestLayout,
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    redirect: "/",
+  },
+  {
+    path: "/:catchAll(.*)",
+    component: NotFoundMeals,
   },
 ];
 

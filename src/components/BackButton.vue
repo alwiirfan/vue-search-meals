@@ -14,12 +14,12 @@
 import { ref, onMounted } from "vue";
 import { useRouter } from "vue-router";
 
-const route = useRouter();
-const hidden = ref(true);
-
 const goBack = () => {
   window.history.go(-1);
 };
+
+const route = useRouter();
+const hidden = ref(true);
 
 onMounted(() => {
   if (window.history.length > 1 && route.currentRoute.value.path !== "/") {
@@ -27,5 +27,10 @@ onMounted(() => {
   } else {
     hidden.value = true;
   }
+
+  return {
+    hidden,
+    goBack,
+  };
 });
 </script>

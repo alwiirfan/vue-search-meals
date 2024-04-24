@@ -15,6 +15,10 @@
   <div class="grid grid-cols-1 md:grid-cols-4 gap-9 md:gap-5 p-8" v-if="meals">
     <MealItems v-for="meal of meals" :key="meal.idMeal" :meal="meal" />
   </div>
+  <NotFoundMeals
+    :message="`No meal found`"
+    :command="`Please search again!!`"
+  />
 </template>
 
 <script setup>
@@ -22,6 +26,7 @@ import { computed } from "vue";
 import store from "../store";
 import { useRouter } from "vue-router";
 import MealItems from "../components/MealItems.vue";
+import NotFoundMeals from "../components/errors/NotFoundMeals.vue";
 
 const route = useRouter();
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
