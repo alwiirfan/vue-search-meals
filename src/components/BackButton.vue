@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="!hidden && route.currentRoute.value.path !== '/'"
-    class="items-center justify-start p-2 w-[14%] md:w-[3.8%] border-2 border-solid ml-4 mt-4 md:ml-10 rounded hover:scale-110 hover:transition-transform hover:duration-300"
+    class="items-center justify-start p-2 w-[14%] md:w-[3.8%] border-2 border-solid ml-4 mt-[70px] md:ml-10 rounded hover:scale-110 hover:transition-transform hover:duration-300"
   >
     <ph-arrow-fat-lines-left
       @click="goBack"

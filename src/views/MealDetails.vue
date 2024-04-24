@@ -1,5 +1,8 @@
 <template>
-  <div class="flex w-11/12 p-8 bg-gray-300 md:w-11/12 mx-auto rounded my-6">
+  <div
+    id="topSection"
+    class="flex w-11/12 p-8 bg-gray-300 md:w-11/12 mx-auto rounded my-6"
+  >
     <div class="md:flex md:justify-between w-full">
       <TopLeftMealDetails :meal="meal" :tag="`Tag : `" />
 
@@ -49,6 +52,10 @@ onMounted(() => {
     .get(`/lookup.php?i=${route.currentRoute.value.params.id}`)
     .then((res) => {
       meal.value = res.data.meals[0];
+
+      // scroll to top
+      const topSection = document.getElementById("topSection");
+      topSection.scrollIntoView({ behavior: "smooth" });
     })
     .catch((err) => {
       console.log(err);

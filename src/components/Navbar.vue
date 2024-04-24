@@ -1,5 +1,12 @@
 <template>
-  <nav class="bg-white shadow-md h-16 flex justify-between items-stretch">
+  <nav
+    id="topSection"
+    :class="{
+      'bg-transparent bg-opacity-5 backdrop-blur-md': isTransparent,
+      'bg-white': !isTransparent,
+    }"
+    class="shadow-md h-16 flex justify-between items-stretch fixed top-0 left-0 right-0 z-10"
+  >
     <router-link
       :to="{ name: 'home' }"
       class="inline-flex px-4 items-center transition-colors hover:bg-purple-200"
@@ -38,7 +45,11 @@
     <div :class="isMenuOpen ? 'block' : 'hidden'" class="md:flex">
       <div
         @click="toggleMenu"
-        class="md:flex flex-col md:p-0 md:flex-row items-center md:gap-0 bg-white"
+        :class="{
+          'bg-transparent bg-opacity-5 backdrop-blur-md': isTransparent,
+          'bg-white': !isTransparent,
+        }"
+        class="md:flex flex-col md:p-0 md:flex-row items-center md:gap-0"
       >
         <router-link
           :to="{ name: 'byName' }"
@@ -70,13 +81,28 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 
 const isMenuOpen = ref(false);
+const isTransparent = ref(true);
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
 };
+
+onMounted(() => {
+  const topSection = document.getElementById("topSection");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 0) {
+      topSection.classList.add("shadow-md");
+      isTransparent.value = true;
+    } else {
+      topSection.classList.remove("shadow-md");
+      isTransparent.value = false;
+    }
+  });
+});
 </script>
 
 <style scoped></style>
