@@ -11,7 +11,6 @@
       :size="32"
       class="absolute top-[50%] right-[9.5%] md:top-[50%] md:right-[4.5%] mds: lg:top-[50%] lg:right-[2.5%] text-3xl hover:cursor-pointer md:hover:scale-110 md:hover:text-gray-700 text-gray-400"
       @click="searchMeals"
-      v-if="keyword"
     />
   </div>
 
