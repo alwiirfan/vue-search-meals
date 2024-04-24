@@ -1,7 +1,9 @@
-# Vue 3 + Vite
+# Search Meals Application
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Application for favorite food search, and developed using `vuejs`.
 
-## Recommended IDE Setup
+## Dependencies of this Application
 
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
+- Vue 3
+- Vuex
+- Axios
