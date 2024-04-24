@@ -15,7 +15,6 @@
   <div class="grid grid-cols-1 md:grid-cols-4 gap-9 md:gap-5 p-8" v-if="meals">
     <MealItems v-for="meal of meals" :key="meal.idMeal" :meal="meal" />
   </div>
-  <pre>{{ meals }}</pre>
 </template>
 
 <script setup>

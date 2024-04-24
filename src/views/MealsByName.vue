@@ -38,7 +38,11 @@ const keyword = ref("");
 const meals = computed(() => store.state.searchedMeals);
 
 const searchMeals = () => {
-  store.dispatch("searchMeals", keyword.value);
+  if (keyword.value) {
+    store.dispatch("searchMeals", keyword.value);
+  } else {
+    store.commit("setSearchedMeals", []);
+  }
 };
 
 onMounted(() => {

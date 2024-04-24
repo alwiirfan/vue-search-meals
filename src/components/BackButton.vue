@@ -15,7 +15,7 @@ import { ref, onMounted } from "vue";
 import { useRouter } from "vue-router";
 
 const route = useRouter();
-const hidden = ref(false);
+const hidden = ref(true);
 
 const goBack = () => {
   window.history.go(-1);

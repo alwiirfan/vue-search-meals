@@ -28,8 +28,6 @@
       <BottomRightMealDetails :meal="meal" :measure="`Measures:`" />
     </div>
   </div>
-
-  <pre>{{ meal }}</pre>
 </template>
 
 <script setup>
